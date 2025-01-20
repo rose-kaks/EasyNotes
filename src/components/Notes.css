@@ -1,0 +1,32 @@
+
+.note-editor, .public-notes {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note-editor textarea {
+    margin-bottom: 10px;
+  }
+  
+  .public-notes ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .public-notes li {
+    background-color: #f7f7f7;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .public-notes li:hover {
+    background-color: #e8f5e9;
+  }
+  
