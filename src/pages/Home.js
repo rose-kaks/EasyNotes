@@ -5,7 +5,7 @@ import UploadForm from '../components/UploadForm';
 const Home = () => {
   return (
     <div>
-      <h2>Welcome to Note Manager</h2>
+      <h2>Welcome to EasyNotes</h2>
       <UploadForm />
     </div>
   );

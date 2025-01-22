@@ -1,20 +1,18 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './pages/Home';
-import Notes from './pages/Notes';
-import Social from './pages/Social';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SummaryOptions from './components/SummaryOptions';
+import NoteEditor from './components/NoteEditor';
+import UserNotes from './components/UserNotes';
+import PublicNotes from './components/PublicNotes';
 
 const App = () => {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/notes" element={<Notes />} />
-        <Route path="/social" element={<Social />} />
+        <Route path="/" element={<SummaryOptions />} />
+        <Route path="/editor" element={<NoteEditor />} />
+        <Route path="/notes" element={<UserNotes />} />
+        <Route path="/public" element={<PublicNotes />} />
       </Routes>
     </Router>
   );

@@ -1,32 +1,50 @@
-
-.note-editor, .public-notes {
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* src/styles/Notes.css */
+.notes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
   }
   
-  .note-editor textarea {
-    margin-bottom: 10px;
-  }
-  
-  .public-notes ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .public-notes li {
-    background-color: #f7f7f7;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
+  .note-card {
+    background: #ffffff;
     border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
   }
   
-  .public-notes li:hover {
-    background-color: #e8f5e9;
+  .note-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .note-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
+  }
+  
+  .note-images img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .note-card button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .note-card button:hover {
+    background-color: #ff4d4d;
   }
   

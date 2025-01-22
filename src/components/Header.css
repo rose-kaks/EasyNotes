@@ -1,6 +1,6 @@
-
+/* src/styles/Header.css */
 .header {
-    background-color: #4CAF50;
+    background-color: #6c63ff;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -10,15 +10,18 @@
   
   .header h1 {
     font-size: 24px;
+    margin: 0;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
   }
   
   .header nav a {
     margin: 0 10px;
     color: white;
     font-size: 18px;
+    text-decoration: none;
   }
   
   .header nav a:hover {
-    color: #d8ffe0; /* Light green */
+    color: #e0ffe0;
   }
   

@@ -1,12 +1,12 @@
-// src/components/PublicNotes.js
+// src/components/UserNotes.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NotesGrid.css';
 
-const PublicNotes = () => {
+const UserNotes = () => {
   const navigate = useNavigate();
   const notes = JSON.parse(localStorage.getItem('notes')) || [];
-  const publicNotes = notes.filter((note) => note.isPublic);
+  const userNotes = notes.filter((note) => !note.isPublic);
 
   const openNote = (note) => {
     navigate('/editor', { state: { summary: note.text, title: note.title, images: note.images } });
@@ -14,10 +14,10 @@ const PublicNotes = () => {
 
   return (
     <div className="notes-page">
-      <h2>Public Notes</h2>
-      {publicNotes.length > 0 ? (
+      <h2>Your Private Notes</h2>
+      {userNotes.length > 0 ? (
         <div className="notes-grid">
-          {publicNotes.map((note) => (
+          {userNotes.map((note) => (
             <div className="note-card" key={note.id} onClick={() => openNote(note)}>
               <h3>{note.title}</h3>
               <p>{note.text.substring(0, 50)}...</p>
@@ -25,10 +25,10 @@ const PublicNotes = () => {
           ))}
         </div>
       ) : (
-        <p>No public notes available yet. Be the first to share one!</p>
+        <p>No private notes available. Start creating one!</p>
       )}
     </div>
   );
 };
 
-export default PublicNotes;
+export default UserNotes;
