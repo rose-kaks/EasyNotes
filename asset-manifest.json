@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/EasyNotes/static/css/main.be68872a.css",
-    "main.js": "/EasyNotes/static/js/main.6c9935f2.js",
+    "main.css": "/EasyNotes/static/css/main.ce15e15b.css",
+    "main.js": "/EasyNotes/static/js/main.ff3da647.js",
+    "static/js/239.1b9bb740.chunk.js": "/EasyNotes/static/js/239.1b9bb740.chunk.js",
+    "static/js/213.89e81d65.chunk.js": "/EasyNotes/static/js/213.89e81d65.chunk.js",
+    "static/js/455.116384d0.chunk.js": "/EasyNotes/static/js/455.116384d0.chunk.js",
     "index.html": "/EasyNotes/index.html",
-    "main.be68872a.css.map": "/EasyNotes/static/css/main.be68872a.css.map",
-    "main.6c9935f2.js.map": "/EasyNotes/static/js/main.6c9935f2.js.map"
+    "main.ce15e15b.css.map": "/EasyNotes/static/css/main.ce15e15b.css.map",
+    "main.ff3da647.js.map": "/EasyNotes/static/js/main.ff3da647.js.map",
+    "239.1b9bb740.chunk.js.map": "/EasyNotes/static/js/239.1b9bb740.chunk.js.map",
+    "213.89e81d65.chunk.js.map": "/EasyNotes/static/js/213.89e81d65.chunk.js.map",
+    "455.116384d0.chunk.js.map": "/EasyNotes/static/js/455.116384d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be68872a.css",
-    "static/js/main.6c9935f2.js"
+    "static/css/main.ce15e15b.css",
+    "static/js/main.ff3da647.js"
   ]
 }
