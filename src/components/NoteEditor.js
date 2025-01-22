@@ -20,7 +20,7 @@ const NoteEditor = () => {
       isPublic,
     };
     localStorage.setItem('notes', JSON.stringify([...notes, newNote]));
-    navigate(isPublic ? '/public' : '/notes');
+    navigate(isPublic ? '/public-notes' : '/user-notes');
   };
 
   const handleImageUpload = (e) => {

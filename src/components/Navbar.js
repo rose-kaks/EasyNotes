@@ -17,15 +17,15 @@ const Navbar = () => {
       <h1>EasyNotes</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </li>
         {user ? (
           <>
             <li>
-              <Link to="/notes">My Notes</Link>
+              <Link to="/user-notes">My Notes</Link>
             </li>
             <li>
-              <Link to="/public">Public Notes</Link>
+              <Link to="/public-notes">Public Notes</Link>
             </li>
             <li onClick={handleLogout} className="logout-button">
               Logout
@@ -34,7 +34,7 @@ const Navbar = () => {
         ) : (
           <>
             <li>
-              <Link to="/public">Public Notes</Link>
+              <Link to="/public-notes">Public Notes</Link>
             </li>
             <li>
               <Link to="/login">Login</Link>
