@@ -1,6 +1,6 @@
-// src/components/ViewNote.js
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import jsPDF from "jspdf";
 import "./ViewNote.css";
 
 const ViewNote = () => {
@@ -18,19 +18,27 @@ const ViewNote = () => {
     setIsDyslexicFont(!isDyslexicFont);
   };
 
-  const convertText = (text) => {
-    setConvertedText(text);
+  const convertText = async (text) => {
+    try {
+      const response = await fetch("/simplify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input_text: text }),
+      });
+      const data = await response.json();
+      setConvertedText(data.output_text || "Failed to simplify text.");
+    } catch (error) {
+      console.error("Error simplifying text:", error);
+      setConvertedText("An error occurred.");
+    }
   };
 
-  const downloadNote = () => {
-    const element = document.createElement("a");
-    const fileContent = `Title: ${note.title}\n\n${note.text}`;
-    const file = new Blob([fileContent], { type: "text/plain" });
-    element.href = URL.createObjectURL(file);
-    element.download = `${note.title}.txt`;
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.setFont("Arial", isDyslexicFont ? "normal" : "bold");
+    doc.text(`Title: ${note.title}`, 10, 10);
+    doc.text(convertedText || note.text, 10, 20);
+    doc.save(`${note.title}.pdf`);
   };
 
   return (
@@ -49,7 +57,7 @@ const ViewNote = () => {
           ? "Switch to Regular Font"
           : "Switch to Dyslexic-Friendly Font"}
       </button>
-      <button onClick={downloadNote}>Download Note</button>
+      <button onClick={downloadPDF}>Download as PDF</button>
 
       {/* Text Converter Section */}
       <div className="converter-section">

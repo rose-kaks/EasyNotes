@@ -1,15 +1,14 @@
-// src/components/Navbar.js
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
-    navigate('/');
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
   return (
@@ -18,6 +17,9 @@ const Navbar = () => {
       <ul>
         <li>
           <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/contrast-checker">Color Contrast Checker</Link>
         </li>
         {user ? (
           <>

@@ -7,6 +7,7 @@ import NoteEditor from "./components/NoteEditor";
 import UserNotes from "./components/UserNotes";
 import PublicNotes from "./components/PublicNotes";
 import ViewNote from "./components/ViewNote";
+import ColorContrastChecker from "./components/ColorContrastChecker";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/user-notes" element={<UserNotes />} />
         <Route path="/public-notes" element={<PublicNotes />} />
         <Route path="/view-note" element={<ViewNote />} />
+        <Route path="/contrast-checker" element={<ColorContrastChecker />} />
       </Routes>
     </Router>
   );
