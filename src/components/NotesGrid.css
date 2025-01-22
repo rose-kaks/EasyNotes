@@ -44,4 +44,20 @@
     color: #555;
     font-family: 'OpenDyslexic', Arial, sans-serif;
   }
+
+
+    .delete-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .delete-button:hover {
+        background-color: #c0392b;
+    }
+  
   

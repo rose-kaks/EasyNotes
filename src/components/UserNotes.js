@@ -1,12 +1,18 @@
 // src/components/UserNotes.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NotesGrid.css';
 
 const UserNotes = () => {
   const navigate = useNavigate();
-  const notes = JSON.parse(localStorage.getItem('notes')) || [];
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || []);
   const userNotes = notes.filter((note) => !note.isPublic);
+
+  const handleDelete = (id) => {
+    const updatedNotes = notes.filter((note) => note.id !== id);
+    setNotes(updatedNotes);
+    localStorage.setItem('notes', JSON.stringify(updatedNotes));
+  };
 
   const openNote = (note) => {
     navigate('/editor', { state: { summary: note.text, title: note.title, images: note.images } });
@@ -18,9 +24,16 @@ const UserNotes = () => {
       {userNotes.length > 0 ? (
         <div className="notes-grid">
           {userNotes.map((note) => (
-            <div className="note-card" key={note.id} onClick={() => openNote(note)}>
+            <div className="note-card" key={note.id}>
               <h3>{note.title}</h3>
               <p>{note.text.substring(0, 50)}...</p>
+              <button onClick={() => openNote(note)}>Edit</button>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(note.id)}
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>

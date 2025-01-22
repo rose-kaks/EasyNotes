@@ -1,0 +1,41 @@
+/* src/styles/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  .navbar h1 {
+    font-size: 1.8rem;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar li {
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .navbar li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar li:hover {
+    text-decoration: underline;
+  }
+  
+  .logout-button {
+    cursor: pointer;
+    color: red;
+  }
+  
