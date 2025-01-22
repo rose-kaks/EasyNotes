@@ -18,6 +18,10 @@ const UserNotes = () => {
     navigate('/editor', { state: { summary: note.text, title: note.title, images: note.images } });
   };
 
+  const viewNote = (note) => {
+    navigate('/view-note', { state: { note } });
+  };
+
   return (
     <div className="notes-page">
       <h2>Your Private Notes</h2>
@@ -27,6 +31,7 @@ const UserNotes = () => {
             <div className="note-card" key={note.id}>
               <h3>{note.title}</h3>
               <p>{note.text.substring(0, 50)}...</p>
+              <button onClick={() => viewNote(note)}>View</button>
               <button onClick={() => openNote(note)}>Edit</button>
               <button
                 className="delete-button"

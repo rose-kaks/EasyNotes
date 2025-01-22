@@ -6,6 +6,7 @@ import SummaryOptions from "./components/SummaryOptions";
 import NoteEditor from "./components/NoteEditor";
 import UserNotes from "./components/UserNotes";
 import PublicNotes from "./components/PublicNotes";
+import ViewNote from "./components/ViewNote";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/editor" element={<NoteEditor />} />
         <Route path="/user-notes" element={<UserNotes />} />
         <Route path="/public-notes" element={<PublicNotes />} />
+        <Route path="/view-note" element={<ViewNote />} />
       </Routes>
     </Router>
   );

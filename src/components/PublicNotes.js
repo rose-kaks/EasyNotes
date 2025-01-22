@@ -1,8 +1,10 @@
 // src/components/PublicNotes.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './NotesGrid.css';
 
 const PublicNotes = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || []);
   const publicNotes = notes.filter((note) => note.isPublic);
@@ -11,6 +13,10 @@ const PublicNotes = () => {
     const updatedNotes = notes.filter((note) => note.id !== id);
     setNotes(updatedNotes);
     localStorage.setItem('notes', JSON.stringify(updatedNotes));
+  };
+
+  const viewNote = (note) => {
+    navigate('/view-note', { state: { note } });
   };
 
   const filteredNotes = publicNotes.filter((note) => {
@@ -38,6 +44,7 @@ const PublicNotes = () => {
             <div className="note-card" key={note.id}>
               <h3>{note.title}</h3>
               <p>{note.text.substring(0, 50)}...</p>
+              <button onClick={() => viewNote(note)}>View</button>
               <button
                 className="delete-button"
                 onClick={() => handleDelete(note.id)}
