@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/EasyNotes/static/css/main.71d0d3d7.css",
-    "main.js": "/EasyNotes/static/js/main.1e219f22.js",
+    "main.css": "/EasyNotes/static/css/main.7776a0d1.css",
+    "main.js": "/EasyNotes/static/js/main.a891ddca.js",
     "index.html": "/EasyNotes/index.html",
-    "main.71d0d3d7.css.map": "/EasyNotes/static/css/main.71d0d3d7.css.map",
-    "main.1e219f22.js.map": "/EasyNotes/static/js/main.1e219f22.js.map"
+    "main.7776a0d1.css.map": "/EasyNotes/static/css/main.7776a0d1.css.map",
+    "main.a891ddca.js.map": "/EasyNotes/static/js/main.a891ddca.js.map"
   },
   "entrypoints": [
-    "static/css/main.71d0d3d7.css",
-    "static/js/main.1e219f22.js"
+    "static/css/main.7776a0d1.css",
+    "static/js/main.a891ddca.js"
   ]
 }
